@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+person:
+  lastName: 你好
+  age: 26
+  boss: true
+  birth: 2021/02/05
+  maps: {k1: v1, k2: 2021}
+  lists:
+    - lisi
+    - zhaoliu
+  dog:
+    name: 小狗
+    age: 3
