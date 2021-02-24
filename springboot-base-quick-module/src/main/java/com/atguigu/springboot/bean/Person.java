@@ -20,7 +20,7 @@ import java.util.Map;
  * @date：2021-02-05 16:01
  * @version：1.0
  */
-@PropertySource(value = {"classpath:person.properties"}) // 读取外部配置文件的内容
+//@PropertySource(value = {"classpath:person.properties"}) // 读取外部配置文件的内容
 @Component
 @ConfigurationProperties(prefix = "person")
 //@Validated

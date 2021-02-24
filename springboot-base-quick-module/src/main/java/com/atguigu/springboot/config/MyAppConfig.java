@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyAppConfig {
     @Bean // 将方法的返回值添加到容器中，组件实例名id默认为方法名
-    public QuickService quickService02() {
+    public QuickService quickService() {
         return new QuickService();
     }
 }
