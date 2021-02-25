@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- 导入thymeleaf名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>成功页面</title>
+</head>
+<body>
+    <h1>终于到成功页面啦！</h1>
+    <div th:text="${hello}"></div>
+    <hr>
+    <div th:text="${world}"></div>
+    <div th:utext="${world}"></div>
+    <hr>
+    <h4 th:each="user:${users}" th:text="${user}"></h4>
+    <hr>
+    <h4>
+        <span th:each="user:${users}">[[${user}]]</span>
+    </h4>
+</body>
+</html>
