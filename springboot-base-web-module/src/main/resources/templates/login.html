@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Signin Template for Bootstrap</title>
+    <title>Signin Template for SpringBoot</title>
     <!-- Bootstrap core CSS -->
     <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -14,22 +14,24 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin" action="dashboard.html">
-    <img class="mb-4" th:href="@{/asserts/img/bootstrap-solid.svg}" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
+<form class="form-signin" th:action="@{/user/login}" action="dashboard.html" method="post">
+    <img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
+    <!-- 判断错误消息是否存在，如果不为空才显示 -->
+    <p style="color: #ff0000;" th:if="${not #strings.isEmpty(msg)}" th:text="${msg}"></p>
     <label class="sr-only" th:text="#{login.username}">Username</label>
-    <input type="text" class="form-control" th:placeholder="#{login.username}" placeholder="Username" required="" autofocus="">
+    <input type="text" name="username" class="form-control" th:placeholder="#{login.username}" placeholder="Username" required="" autofocus="">
     <label class="sr-only" th:text="#{login.password}">Password</label>
-    <input type="password" class="form-control" th:placeholder="#{login.password}" placeholder="Password" required="">
+    <input type="password" name="password" class="form-control" th:placeholder="#{login.password}" placeholder="Password" required="">
     <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" value="remember-me"/> [[#{login.remember}]]
+            <input type="checkbox" value="remember-me"/> [[#{login.rememberme}]]
         </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.button}">Sign in</button>
     <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
-    <a class="btn btn-sm">中文</a>
-    <a class="btn btn-sm">English</a>
+    <a class="btn btn-sm" th:href="@{/login.html(lang='zh_CN')}">中文</a>
+    <a class="btn btn-sm" th:href="@{/login.html(lang='en_US')}">English</a>
 </form>
 </body>
 
