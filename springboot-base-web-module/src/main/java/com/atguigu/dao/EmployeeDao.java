@@ -38,6 +38,10 @@ public class EmployeeDao {
         employees.put(employee.getId(), employee);
     }
 
+    /**
+     * 查询所有员工信息
+     * @return 员工集合信息
+     */
     public Collection<Employee> getAll() {
         return employees.values();
     }
