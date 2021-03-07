@@ -2,6 +2,8 @@ package com.atguigu.config;
 
 import com.atguigu.component.LoginHandlerInterceptor;
 import com.atguigu.component.MyLocaleResolver;
+import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -45,7 +47,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             // 注册拦截器
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html", "/", "/user/login");
+                //registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html", "/", "/user/login");
             }
         };
         return adapter;
