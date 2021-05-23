@@ -1,5 +1,6 @@
 package com.atguigu;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,7 @@ import java.util.Locale;
  * @date：2021-02-03 18:47
  * @version：1.0
  */
+@MapperScan(value = "com.atguigu.mapper") // 批量扫描指定包下所有接口，XxxMapper接口上无需使用@Mapper注解
 @SpringBootApplication // 标记SpringBoot应用
 public class SpringBootMainApplication {
     public static void main(String[] args) {
